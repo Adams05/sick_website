@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const ejs = require('ejs');
 
 const app = express();
 
@@ -13,9 +14,9 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-PORT = 3000;
+const PORT = 3000 || process.env.PORT;
 
-app.listen(PORT, function () {
+app.listen(PORT, () => {
   console.log(`Server started on ${PORT}...`);
 });
 
